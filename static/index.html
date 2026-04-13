@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexus Auctions | Live Bidding</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <style>
+        .forfeit-btn {
+            display: none;
+            background: transparent;
+            border: 1px solid #e05c5c;
+            color: #e05c5c;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.82rem;
+            margin-top: 8px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .forfeit-btn:hover {
+            background: #e05c5c22;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div>
+                <h1>Nexus Live Auctions</h1>
+                <p class="subtitle">Experience the future of real-time bidding</p>
+            </div>
+            <a class="link" href="/admin">Admin View →</a>
+        </header>
+
+        <section class="panel" id="connection-panel">
+            <h2>User Terminal</h2>
+            <div class="connection-row">
+                <label for="username">Username</label>
+                <input id="username" type="text" placeholder="Enter your handle" autocomplete="off" />
+                <button id="connectBtn">Connect</button>
+                <button id="disconnectBtn" disabled>Disconnect</button>
+            </div>
+            <div class="quick-users-row">
+                <span class="hint">Quick Access:</span>
+                <button type="button" class="quick-username" data-name="Gagan">Gagan</button>
+                <button type="button" class="quick-username" data-name="Sunidhi">Sunidhi</button>
+                <button type="button" class="quick-username" data-name="Nikhita">Nikhita</button>
+            </div>
+            <p id="status" class="status status-disconnected">Disconnected</p>
+        </section>
+
+        <section class="panel" id="items-panel">
+            <h2>Active Lots</h2>
+            <p class="hint">Bids will update automatically. Add to the current top bid below.</p>
+            <div class="cards-grid" id="itemCards">
+                <!-- Laptop -->
+                <div class="item-card" data-item="laptop">
+                    <div class="item-image"></div>
+                    <div class="item-content">
+                        <div class="item-card-header">
+                            <h3>Laptop</h3>
+                            <span class="badge" data-item="laptop" data-role="status">Active</span>
+                        </div>
+                        <p class="item-line">Top Bid: <span data-item="laptop" data-role="bid">0</span></p>
+                        <p class="item-line">Holder: <span data-item="laptop" data-role="bidder">–</span></p>
+                        <div class="item-actions">
+                            <button class="bid-button" data-item="laptop" data-increment="100">+100</button>
+                            <button class="bid-button" data-item="laptop" data-increment="500">+500</button>
+                        </div>
+                        <div class="custom-bid">
+                            <input type="number" class="custom-bid-input" data-item="laptop" placeholder="Custom amount">
+                            <button class="bid-button custom-bid-btn" data-item="laptop">Bid</button>
+                        </div>
+                        <button class="forfeit-btn" data-item="laptop">Forfeit My Bid</button>
+                    </div>
+                </div>
+                <!-- Phone -->
+                <div class="item-card" data-item="phone">
+                    <div class="item-image"></div>
+                    <div class="item-content">
+                        <div class="item-card-header">
+                            <h3>Phone</h3>
+                            <span class="badge" data-item="phone" data-role="status">Active</span>
+                        </div>
+                        <p class="item-line">Top Bid: <span data-item="phone" data-role="bid">0</span></p>
+                        <p class="item-line">Holder: <span data-item="phone" data-role="bidder">–</span></p>
+                        <div class="item-actions">
+                            <button class="bid-button" data-item="phone" data-increment="100">+100</button>
+                            <button class="bid-button" data-item="phone" data-increment="500">+500</button>
+                        </div>
+                        <div class="custom-bid">
+                            <input type="number" class="custom-bid-input" data-item="phone" placeholder="Custom amount">
+                            <button class="bid-button custom-bid-btn" data-item="phone">Bid</button>
+                        </div>
+                        <button class="forfeit-btn" data-item="phone">Forfeit My Bid</button>
+                    </div>
+                </div>
+                <!-- Headphones -->
+                <div class="item-card" data-item="headphones">
+                    <div class="item-image"></div>
+                    <div class="item-content">
+                        <div class="item-card-header">
+                            <h3>Headphones</h3>
+                            <span class="badge" data-item="headphones" data-role="status">Active</span>
+                        </div>
+                        <p class="item-line">Top Bid: <span data-item="headphones" data-role="bid">0</span></p>
+                        <p class="item-line">Holder: <span data-item="headphones" data-role="bidder">–</span></p>
+                        <div class="item-actions">
+                            <button class="bid-button" data-item="headphones" data-increment="100">+100</button>
+                            <button class="bid-button" data-item="headphones" data-increment="500">+500</button>
+                        </div>
+                        <div class="custom-bid">
+                            <input type="number" class="custom-bid-input" data-item="headphones" placeholder="Custom amount">
+                            <button class="bid-button custom-bid-btn" data-item="headphones">Bid</button>
+                        </div>
+                        <button class="forfeit-btn" data-item="headphones">Forfeit My Bid</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel" id="activity-panel">
+            <h2>Live Feed</h2>
+            <div id="messages" class="messages" aria-label="Messages from the server"></div>
+        </section>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

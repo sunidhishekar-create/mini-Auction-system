@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexus Admin | Control Panel</title>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div>
+                <h1>Nexus Overseer</h1>
+                <p class="subtitle">System operations and active bids overview</p>
+            </div>
+            <div class="header-actions">
+                <button id="stopAuctionBtn">Stop Auction</button>
+                <a class="link" href="/">Client View →</a>
+            </div>
+        </header>
+
+        <section class="panel" id="state-panel">
+            <h2>Live Status</h2>
+            <div class="cards-grid">
+                <div class="item-card" data-item="laptop">
+                    <div class="item-image"></div>
+                    <div class="item-content">
+                        <h3>Laptop</h3>
+                        <p class="item-line">Highest Bid: ₹<span data-item="laptop" data-role="bid">0</span></p>
+                        <p class="item-line">Holder: <span data-item="laptop" data-role="bidder">No bids</span></p>
+                    </div>
+                </div>
+                <div class="item-card" data-item="phone">
+                    <div class="item-image"></div>
+                    <div class="item-content">
+                        <h3>Phone</h3>
+                        <p class="item-line">Highest Bid: ₹<span data-item="phone" data-role="bid">0</span></p>
+                        <p class="item-line">Holder: <span data-item="phone" data-role="bidder">No bids</span></p>
+                    </div>
+                </div>
+                <div class="item-card" data-item="headphones">
+                    <div class="item-image"></div>
+                    <div class="item-content">
+                        <h3>Headphones</h3>
+                        <p class="item-line">Highest Bid: ₹<span data-item="headphones" data-role="bid">0</span></p>
+                        <p class="item-line">Holder: <span data-item="headphones" data-role="bidder">No bids</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel" id="admin-logs-panel">
+            <h2>Event Stream</h2>
+            <div id="adminLogs" class="logs"></div>
+        </section>
+    </div>
+
+    <script src="/static/admin.js"></script>
+</body>
+</html>

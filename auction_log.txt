@@ -1,0 +1,57 @@
+=== Auction Session Started: 2026-04-13 10:47:15 ===
+[2026-04-13 10:47:15] Auction Server Running on port 5000
+[2026-04-13 10:47:15] Logging to: C:\Users\sunid\.vscode\Python\CN\CN PROJECT\auction_log.txt
+[2026-04-13 10:47:39] Connection from ('127.0.0.1', 64865)
+[2026-04-13 10:47:39] ADMIN joined from ('127.0.0.1', 64865)
+[2026-04-13 10:47:39] Auction timer started (first client connected)
+[2026-04-13 10:47:39] BROADCAST: ADMIN joined the auction
+[2026-04-13 10:47:43] Connection from ('127.0.0.1', 51785)
+[2026-04-13 10:47:43] Gagan joined from ('127.0.0.1', 51785)
+[2026-04-13 10:47:43] BROADCAST: Gagan joined the auction
+[2026-04-13 10:47:46] Connection from ('127.0.0.1', 51936)
+[2026-04-13 10:47:46] Sunidhi joined from ('127.0.0.1', 51936)
+[2026-04-13 10:47:46] BROADCAST: Sunidhi joined the auction
+[2026-04-13 10:47:51] BROADCAST: Gagan bids 500 on laptop
+[2026-04-13 10:47:51] BID: Gagan bids 500 on laptop
+[2026-04-13 10:47:52] BROADCAST: Gagan bids 100 on phone
+[2026-04-13 10:47:52] BID: Gagan bids 100 on phone
+[2026-04-13 10:47:53] BROADCAST: Gagan bids 500 on headphones
+[2026-04-13 10:47:53] BID: Gagan bids 500 on headphones
+[2026-04-13 10:47:56] BROADCAST: Sunidhi bids 1000 on laptop
+[2026-04-13 10:47:56] BID: Sunidhi bids 1000 on laptop
+[2026-04-13 10:47:57] BROADCAST: Sunidhi bids 600 on phone
+[2026-04-13 10:47:57] BID: Sunidhi bids 600 on phone
+[2026-04-13 10:48:07] BROADCAST: Sunidhi bids 590 on headphones
+[2026-04-13 10:48:07] BID: Sunidhi bids 590 on headphones
+[2026-04-13 10:48:21] BROADCAST: Sunidhi forfeited their bid on phone
+[2026-04-13 10:48:21] Sunidhi forfeited bid on phone
+[2026-04-13 10:48:26] BROADCAST: Gagan bids 500 on phone
+[2026-04-13 10:48:26] BID: Gagan bids 500 on phone
+[2026-04-13 10:48:30] ADMIN force-stopped the auction
+[2026-04-13 10:48:30] BROADCAST: Auction ended for laptop. Winner: Sunidhi with bid 1000
+[2026-04-13 10:48:30] BROADCAST: Auction ended for headphones. Winner: Sunidhi with bid 590
+[2026-04-13 10:48:30] BROADCAST: Auction ended for phone. Winner: Gagan with bid 500
+[2026-04-13 10:48:30] BROADCAST: ADMIN disconnected (bids retained)
+[2026-04-13 10:48:30] ADMIN dropped connection — bids retained
+[2026-04-13 10:48:30] ADMIN disconnected
+[2026-04-13 10:48:31] FINAL RESULTS:
+
+=== AUCTION RESULTS ===
+laptop: Winner - Sunidhi | Final Bid: 1000
+phone: Winner - Gagan | Final Bid: 500
+headphones: Winner - Sunidhi | Final Bid: 590
+=======================
+
+[2026-04-13 10:48:31] BROADCAST: 
+=== AUCTION RESULTS ===
+laptop: Winner - Sunidhi | Final Bid: 1000
+phone: Winner - Gagan | Final Bid: 500
+headphones: Winner - Sunidhi | Final Bid: 590
+=======================
+
+[2026-04-13 10:52:07] BROADCAST: Sunidhi disconnected (bids retained)
+[2026-04-13 10:52:07] Sunidhi dropped connection — bids retained
+[2026-04-13 10:52:07] Sunidhi disconnected
+[2026-04-13 10:52:07] BROADCAST: Gagan disconnected (bids retained)
+[2026-04-13 10:52:07] Gagan dropped connection — bids retained
+[2026-04-13 10:52:07] Gagan disconnected

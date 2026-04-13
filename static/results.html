@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexus – Auction Final Ledger</title>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div>
+                <h1>Final Ledger</h1>
+                <p class="subtitle">Complete resolution of the auction</p>
+            </div>
+            <div class="header-actions">
+                <a class="link" href="/">Back to terminal →</a>
+            </div>
+        </header>
+
+        <section class="panel">
+            <h2 class="results-heading">Auction Concluded</h2>
+            <p class="results-subtitle">Review the top bids and holders</p>
+            <div class="results-table-wrapper">
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Asset</th>
+                            <th scope="col">Holder</th>
+                            <th scope="col">Final Value</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsBody">
+                        <!-- Filled by inline script using localStorage -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        (function () {
+            const bodyEl = document.getElementById("resultsBody");
+            if (!bodyEl) return;
+
+            let stored = null;
+            try {
+                stored = JSON.parse(localStorage.getItem("auctionResults") || "null");
+            } catch (e) {
+                stored = null;
+            }
+
+            const itemsOrder = [
+                { key: "laptop", label: "Laptop" },
+                { key: "phone", label: "Phone" },
+                { key: "headphones", label: "Headphones" },
+            ];
+            const defaultState = {
+                laptop: { bidder: null, bid: 0 },
+                phone: { bidder: null, bid: 0 },
+                headphones: { bidder: null, bid: 0 },
+            };
+
+            const data = stored && typeof stored === "object" ? stored : defaultState;
+
+            itemsOrder.forEach((entry) => {
+                const info = data[entry.key] || { bidder: null, bid: 0 };
+                const row = document.createElement("tr");
+
+                let rowClass = "results-row-no-bids";
+                let holderText = "UNCLAIMED";
+                let bidHtml = `<span class="price-cell">0</span>`;
+
+                if (info && info.bidder) {
+                    rowClass = "results-row-has-bids";
+                    holderText = info.bidder;
+                    bidHtml = `<span class="price-cell">${info.bid || 0}</span>`;
+                }
+
+                row.className = rowClass;
+
+                const itemCell = document.createElement("td");
+                itemCell.textContent = entry.label;
+
+                const holderCell = document.createElement("td");
+                holderCell.textContent = holderText;
+                if (info.bidder) {
+                    holderCell.className = "winner-cell";
+                }
+
+                const bidCell = document.createElement("td");
+                bidCell.innerHTML = bidHtml;
+
+                row.appendChild(itemCell);
+                row.appendChild(holderCell);
+                row.appendChild(bidCell);
+                bodyEl.appendChild(row);
+            });
+        })();
+    </script>
+</body>
+</html>
